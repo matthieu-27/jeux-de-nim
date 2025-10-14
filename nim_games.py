@@ -51,12 +51,18 @@ def display_humans(match_number, turn_number):
 
 
 def computer_5_minus_n(played_number, turn_number):
+    """
+    Returns 5 minus `played_number` integer incrementing `turn_number`
+    """
     computer_take = 5 - played_number
     turn_number += 1
     return computer_take, turn_number
 
 
 def check_and_increment(match_number, turn_number, played_number):
+    """
+    Main game logic, checks if next move is playable, returns False otherwise
+    """
     if played_number in range(MIN, MAX):
         if check_matches(match_number, played_number):
             print(f"{get_player(turn_number-1)} a pris {played_number} allumettes")
@@ -71,6 +77,9 @@ def check_and_increment(match_number, turn_number, played_number):
 
 
 def ask_player_input(turn_number):
+    """
+    Asks and returns user input incrementing `turn_number`
+    """
     int_str = int(input(f"Tour {turn_number}: Combien d'allumettes voulez vous {player_one}?\n"))
     turn_number += 1
     return int_str, turn_number
