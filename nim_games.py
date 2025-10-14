@@ -84,7 +84,7 @@ if __name__ == '__main__':
     match_number = 21
 
     while not game_over:
-        if not game_mode and turn == 0:
+        if not game_over and turn == 0:
             match_number = 21
         if game_mode == 1:
             display_humans(match_number, turn)
